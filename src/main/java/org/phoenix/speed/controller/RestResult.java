@@ -47,4 +47,11 @@ public class RestResult {
         restResult.setData(o);
         return restResult;
     }
+
+    public static RestResult error(Object o){
+        RestResult restResult = new RestResult();
+        restResult.setResultCode(ResultCode.ERROR);
+        restResult.setData(o);
+        return restResult;
+    }
 }
