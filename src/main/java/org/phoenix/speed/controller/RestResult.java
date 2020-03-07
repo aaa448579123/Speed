@@ -35,6 +35,11 @@ public class RestResult {
         this.message = resultCode.getMessage();
     }
 
+    public void setRestException(RestException restException) {
+        this.code = restException.getCode();
+        this.message = restException.getMessage();
+    }
+
     public static RestResult success(){
         RestResult restResult = new RestResult();
         restResult.setResultCode(ResultCode.SUCCESS);
@@ -48,10 +53,9 @@ public class RestResult {
         return restResult;
     }
 
-    public static RestResult error(Object o){
+    public static RestResult error(RestException restException){
         RestResult restResult = new RestResult();
-        restResult.setResultCode(ResultCode.ERROR);
-        restResult.setData(o);
+        restResult.setRestException(restException);
         return restResult;
     }
 }

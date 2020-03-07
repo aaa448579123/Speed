@@ -1,8 +1,7 @@
 package org.phoenix.speed.controller;
 
 public enum ResultCode {
-    SUCCESS(200,"请求成功"),
-    ERROR(500,"程序出错");
+    SUCCESS(200,"请求成功");
 
     private Integer code;
     private String message;

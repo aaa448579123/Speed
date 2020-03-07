@@ -2,25 +2,24 @@ package org.phoenix.speed.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.phoenix.speed.controller.exceptions.global.SystemException;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 
-@ControllerAdvice
+@RestControllerAdvice
 @Aspect
 @Component
 public class RestHandler implements ResponseBodyAdvice<Object> {
@@ -31,7 +30,7 @@ public class RestHandler implements ResponseBodyAdvice<Object> {
     private static final String RESPONSE_REST_RESULT = "RESPONSE-REST-RESULT";
 
     @Before("classAnn() || methodAnn()")
-    public void before(JoinPoint joinPoint){
+    public void before(){
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         request.setAttribute(RESPONSE_REST_RESULT,RestResult.class);
@@ -52,8 +51,13 @@ public class RestHandler implements ResponseBodyAdvice<Object> {
             try {
                 wrapperBody = objectMapper.writeValueAsString(RestResult.success(o));
             } catch (JsonProcessingException e) {
-                wrapperBody = RestResult.error(o);
+                wrapperBody = RestResult.error(new SystemException());
             }
+        }else if (o instanceof RestException){
+            RestResult restResult = new RestResult();
+            restResult.setCode(((RestException) o).getCode());
+            restResult.setMessage(((RestException) o).getMessage());
+            wrapperBody = restResult;
         }else {
             wrapperBody = RestResult.success(o);
         }

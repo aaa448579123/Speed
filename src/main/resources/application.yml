@@ -4,6 +4,10 @@ spring:
         username: root
         password: 12345678
         url: jdbc:mysql://127.0.0.1:3306/ccpdev?serverTimezone=GMT%2B8
+    mvc:
+        throw-exception-if-no-handler-found: true
+    resources:
+        add-mappings: false
 
 server:
     port: 9981

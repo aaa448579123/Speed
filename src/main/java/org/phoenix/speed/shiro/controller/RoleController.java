@@ -27,9 +27,6 @@ public class RoleController {
 //    @RequiresPermissions("role:add")
     public RestResult addUser(@RequestBody SysRole role){
         int sur = sysRoleService.addRole(role);
-        if (sur!=1){
-            return RestResult.error("新增失败");
-        }
         return RestResult.success();
     }
 }

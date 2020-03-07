@@ -50,9 +50,6 @@ public class UserController {
     @RequiresPermissions("user:add")
     public RestResult addUser(@RequestBody SysUser user){
         int su = sysUserService.addUser(user);
-        if (su!=1){
-            return RestResult.error("新增失败");
-        }
         return RestResult.success();
     }
 
@@ -74,9 +71,6 @@ public class UserController {
     @RequiresPermissions("userRole:add")
     public RestResult addUser(@RequestBody SysUserRole userRole){
         int sur = sysUserRoleService.addUserRole(userRole);
-        if (sur!=1){
-            return RestResult.error("新增失败");
-        }
         return RestResult.success();
     }
 
