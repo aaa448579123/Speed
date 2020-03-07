@@ -14,4 +14,10 @@ public class TestController {
     public String a(){
         return "abc";
     }
+
+    @GetMapping("/common/b")
+    public String b(){
+        return "bbbb";
+    }
+
 }

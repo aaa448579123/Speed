@@ -1,8 +1,14 @@
 spring:
     datasource:
-        driverClassName: com.mysql.jdbc.Driver
+        driverClassName: com.mysql.cj.jdbc.Driver
+        username: root
         password: 12345678
         url: jdbc:mysql://127.0.0.1:3306/ccpdev?serverTimezone=GMT%2B8
-        username: root
+
 server:
     port: 9981
+
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: org.phoenix.speed
