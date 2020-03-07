@@ -1,7 +1,10 @@
 package org.phoenix.speed.controller;
 
+import org.apache.shiro.authc.AuthenticationException;
+import org.phoenix.speed.controller.exceptions.global.NoAuthenticationException;
 import org.phoenix.speed.controller.exceptions.global.NotFoundException;
 import org.phoenix.speed.controller.exceptions.global.SystemException;
+import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -16,8 +19,18 @@ import javax.servlet.http.HttpServletResponse;
 public class RestExceptionHandlerAdvice {
 
     @ExceptionHandler(NoHandlerFoundException.class)
-    public RestResult notFoundException(){
-        return RestResult.error(new NotFoundException());
+    public RestException notFoundException(){
+        return new NotFoundException();
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public RestException authenticationException(){
+        return new NoAuthenticationException();
+    }
+
+    @ExceptionHandler(BadSqlGrammarException.class)
+    public RestException badSqlGrammarException(){
+        return new SystemException();
     }
 
     @ExceptionHandler(Exception.class)

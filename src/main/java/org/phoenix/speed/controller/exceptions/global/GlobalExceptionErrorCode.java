@@ -9,4 +9,6 @@ public abstract class GlobalExceptionErrorCode {
     public static final Integer SystemExceptionErrorCode = 500;
     //未找到请求
     public static final Integer NotFoundExceptionErrorCode = 404;
+    //无访问权限
+    public static final Integer NoAuthenticationExceptionErrorCode = 1000;
 }

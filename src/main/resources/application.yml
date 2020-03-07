@@ -3,7 +3,7 @@ spring:
         driverClassName: com.mysql.cj.jdbc.Driver
         username: root
         password: 12345678
-        url: jdbc:mysql://127.0.0.1:3306/ccpdev?serverTimezone=GMT%2B8
+        url: jdbc:mysql://127.0.0.1:3306/speed?serverTimezone=GMT%2B8&characterEncoding=utf8
     mvc:
         throw-exception-if-no-handler-found: true
     resources:

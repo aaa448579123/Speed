@@ -5,6 +5,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.phoenix.speed.controller.RestApi;
 import org.phoenix.speed.controller.RestResult;
 import org.phoenix.speed.shiro.pojo.po.SysUser;
 import org.phoenix.speed.shiro.pojo.po.SysUserRole;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@RestApi
 public class UserController {
 
     @Autowired

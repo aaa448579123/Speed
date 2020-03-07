@@ -1,6 +1,7 @@
 package org.phoenix.speed.shiro.controller;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.phoenix.speed.controller.RestApi;
 import org.phoenix.speed.controller.RestResult;
 import org.phoenix.speed.shiro.pojo.po.SysRole;
 import org.phoenix.speed.shiro.pojo.po.SysUserRole;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/role")
+@RestApi
 public class RoleController {
 
     @Autowired
