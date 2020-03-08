@@ -4,6 +4,7 @@ package org.phoenix.speed.shiro.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.phoenix.speed.shiro.pojo.po.SysUser;
 import org.phoenix.speed.shiro.pojo.vo.SysUserVO;
+
 @Mapper
 public interface SysUserMapper {
     /**

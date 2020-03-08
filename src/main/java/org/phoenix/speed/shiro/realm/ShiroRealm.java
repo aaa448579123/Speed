@@ -1,16 +1,24 @@
 package org.phoenix.speed.shiro.realm;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-
+import org.phoenix.speed.shiro.pojo.po.SysMenu;
+import org.phoenix.speed.shiro.pojo.po.SysRole;
+import org.phoenix.speed.shiro.pojo.po.SysUser;
 import org.phoenix.speed.shiro.pojo.vo.SysUserVO;
 import org.phoenix.speed.shiro.service.SysMenuService;
 import org.phoenix.speed.shiro.service.SysRoleService;
 import org.phoenix.speed.shiro.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 自定义Realm
@@ -34,7 +42,21 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-       return null;
+        SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
+        String userName = user.getUserName();
+
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+
+        // 获取用户角色集
+        List<SysRole> roleList = this.roleService.selectUserRole(userName);
+        Set<String> roleSet = roleList.stream().map(SysRole::getRoleName).collect(Collectors.toSet());
+        simpleAuthorizationInfo.setRoles(roleSet);
+
+        // 获取用户权限集
+        List<SysMenu> permissionList = this.menuService.selectUserPermission(userName);
+        Set<String> permissionSet = permissionList.stream().map(SysMenu::getPermission).collect(Collectors.toSet());
+        simpleAuthorizationInfo.setStringPermissions(permissionSet);
+        return simpleAuthorizationInfo;
     }
 
     /**

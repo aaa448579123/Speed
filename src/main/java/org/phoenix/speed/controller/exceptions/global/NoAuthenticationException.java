@@ -8,9 +8,9 @@ import org.phoenix.speed.controller.RestException;
  */
 public class NoAuthenticationException extends RestException {
     public NoAuthenticationException() {
-        super(GlobalExceptionErrorCode.NotFoundExceptionErrorCode, "无访问权限");
+        super(GlobalExceptionErrorCode.NoAuthorizationExceptionErrorCode, "无访问权限");
     }
     public NoAuthenticationException(String message) {
-        super(GlobalExceptionErrorCode.NoAuthenticationExceptionErrorCode, message);
+        super(GlobalExceptionErrorCode.NoAuthorizationExceptionErrorCode, message);
     }
 }

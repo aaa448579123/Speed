@@ -2,7 +2,9 @@ package org.phoenix.speed.shiro.pojo.vo;
 
 import org.phoenix.speed.shiro.pojo.po.SysUser;
 
-public class SysUserVO extends SysUser {
+import java.util.Date;
+
+public class SysUserVO extends SysUser{
 
     /**
      * 角色id
@@ -14,7 +16,11 @@ public class SysUserVO extends SysUser {
      */
     private String roleName;
 
-
+    public SysUserVO(String userId, String userName, String password, Date createTime, Date updateTime, String roleId, String roleName) {
+        super(userId, userName, password, createTime, updateTime);
+        this.roleId = roleId;
+        this.roleName = roleName;
+    }
 
     public String getRoleId() {
         return roleId;

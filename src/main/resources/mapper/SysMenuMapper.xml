@@ -135,7 +135,7 @@
     LEFT JOIN sys_role_menu rm ON (m.menu_id = rm.menu_id)
     LEFT JOIN sys_role r ON (rm.role_id = r.role_id)
     left join sys_user_role ur on (r.role_id = ur.role_id)
-    left join sys_user u on (ur.user_id = u.user.id)
+    left join sys_user u on (ur.user_id = u.user_id)
     where u.user_name = #{userName,jdbcType=VARCHAR}
   </select>
 </mapper>

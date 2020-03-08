@@ -57,9 +57,15 @@ public class UserController {
 
 
     @GetMapping
-    @RequiresRoles("user")
-    @RequiresPermissions("user:get")
+    //@RequiresPermissions("")
     public RestResult getUser(@RequestParam("userName") String userName){
+        SysUserVO user = sysUserService.selectByUserName(userName);
+        return RestResult.success(user);
+    }
+
+    @GetMapping("/a")
+    @RequiresRoles("user")
+    public RestResult getUser1(@RequestParam("userName") String userName){
         SysUserVO user = sysUserService.selectByUserName(userName);
         return RestResult.success(user);
     }

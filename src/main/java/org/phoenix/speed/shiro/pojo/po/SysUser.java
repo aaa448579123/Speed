@@ -28,6 +28,15 @@ public class SysUser {
      */
     private Date updateTime;
 
+
+    public SysUser(String userId, String userName, String password, Date createTime, Date updateTime) {
+        this.userId = userId;
+        this.userName = userName;
+        this.password = password;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
     public String getUserId() {
         return userId;
     }
@@ -66,5 +75,16 @@ public class SysUser {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "SysUser{" +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
     }
 }

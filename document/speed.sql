@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50715
  Source Host           : localhost:3306
- Source Schema         : ccpdev
+ Source Schema         : speed
 
  Target Server Type    : MySQL
  Target Server Version : 50715
  File Encoding         : 65001
 
- Date: 07/03/2020 12:27:25
+ Date: 08/03/2020 16:57:30
 */
 
 SET NAMES utf8mb4;
@@ -70,7 +70,7 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES ('1', '2');
+INSERT INTO `sys_role_menu` VALUES ('1', '1');
 INSERT INTO `sys_role_menu` VALUES ('1', '2');
 
 -- ----------------------------
