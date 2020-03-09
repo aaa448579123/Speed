@@ -13,4 +13,7 @@ public abstract class GlobalExceptionErrorCode {
     public static final Integer NoAuthorizationExceptionErrorCode = 1000;
     //身份验证失败
     public static final Integer NoAuthenticationExceptionErrorCode = 1001;
+    //未登录
+    public static final Integer UnLoginException = 403;
+
 }

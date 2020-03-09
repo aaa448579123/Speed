@@ -2,16 +2,14 @@ package org.phoenix.speed.controller;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authz.AuthorizationException;
-import org.phoenix.speed.controller.exceptions.global.NoAuthenticationException;
-import org.phoenix.speed.controller.exceptions.global.NoAuthorizationException;
-import org.phoenix.speed.controller.exceptions.global.NotFoundException;
-import org.phoenix.speed.controller.exceptions.global.SystemException;
+import org.phoenix.speed.controller.exceptions.global.*;
 import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 
 /**
@@ -22,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 public class RestExceptionHandlerAdvice {
 
     @ExceptionHandler(NoHandlerFoundException.class)
-    public RestException notFoundException(){
-        return new NotFoundException();
+    public void notFoundException(HttpServletResponse response) throws IOException {
+        RestResult.writeResponse(response,new NotFoundException());
     }
 
     /**
@@ -34,7 +32,6 @@ public class RestExceptionHandlerAdvice {
     public RestException defaultErrorHandler(){
         return new NoAuthenticationException();
     }
-
 
     /**
      * 身份验证失败

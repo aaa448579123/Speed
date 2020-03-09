@@ -34,13 +34,12 @@ public class UserController {
      * @return
      */
     @GetMapping("/common/login")
-    public RestResult login(){
+    public void login(){
         String userName = "admin";
         String password = "123456";
 
         UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
         SecurityUtils.getSubject().login(token);
-        return RestResult.success("登录成功");
     }
 
     /**
