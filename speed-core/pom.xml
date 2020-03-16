@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>speed-core-exception</module>
+        <module>speed-core-shiro</module>
+    </modules>
+    <parent>
+        <groupId>org.phoenix</groupId>
+        <artifactId>speed</artifactId>
+        <version>0.0.1</version>
+    </parent>
+    <groupId>org.phoenix</groupId>
+    <artifactId>speed-core</artifactId>
+    <version>0.0.1</version>
+    <name>speed-core</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+    </dependencies>
+</project>
