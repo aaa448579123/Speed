@@ -1,10 +1,8 @@
-package org.phoenix.speed.shiro.controller;
+package org.phoenix.speed.controller;
 
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.phoenix.speed.controller.RestApi;
-import org.phoenix.speed.controller.RestResult;
+import org.phoenix.speed.exception.RestApi;
+import org.phoenix.speed.exception.RestResult;
 import org.phoenix.speed.shiro.pojo.po.SysRole;
-import org.phoenix.speed.shiro.pojo.po.SysUserRole;
 import org.phoenix.speed.shiro.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -23,5 +23,20 @@
             <artifactId>shiro-spring</artifactId>
             <version>1.4.0</version>
         </dependency>
+        <!--domain模块依赖-->
+        <dependency>
+            <groupId>org.phoenix</groupId>
+            <artifactId>speed-core-domain</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.phoenix</groupId>
+            <artifactId>speed-core-exception</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 </project>

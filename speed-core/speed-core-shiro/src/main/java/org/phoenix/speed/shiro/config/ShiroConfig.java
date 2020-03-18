@@ -6,15 +6,15 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.phoenix.speed.shiro.filter.ShiroFormAuthenticationFilter;
 import org.phoenix.speed.shiro.realm.ShiroRealm;
-import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Component
 @Configuration
 public class ShiroConfig {
     @Bean

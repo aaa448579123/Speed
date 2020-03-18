@@ -11,6 +11,12 @@
 
     <artifactId>speed-webapi</artifactId>
     <dependencies>
+        <!--core模块依赖-->
+        <dependency>
+            <groupId>org.phoenix</groupId>
+            <artifactId>speed-core</artifactId>
+            <version>0.0.1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -33,6 +39,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.phoenix</groupId>
+            <artifactId>speed-core-domain</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
         </dependency>
     </dependencies>
     <build>

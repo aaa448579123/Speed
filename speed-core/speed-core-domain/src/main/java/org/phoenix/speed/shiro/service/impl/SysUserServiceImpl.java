@@ -4,7 +4,7 @@ import org.phoenix.speed.shiro.dao.SysUserMapper;
 import org.phoenix.speed.shiro.pojo.po.SysUser;
 import org.phoenix.speed.shiro.pojo.vo.SysUserVO;
 import org.phoenix.speed.shiro.service.SysUserService;
-import org.phoenix.speed.shiro.util.CommonUtil;
+import org.phoenix.speed.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

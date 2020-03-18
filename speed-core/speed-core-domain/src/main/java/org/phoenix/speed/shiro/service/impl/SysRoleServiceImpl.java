@@ -3,7 +3,7 @@ package org.phoenix.speed.shiro.service.impl;
 import org.phoenix.speed.shiro.dao.SysRoleMapper;
 import org.phoenix.speed.shiro.pojo.po.SysRole;
 import org.phoenix.speed.shiro.service.SysRoleService;
-import org.phoenix.speed.shiro.util.CommonUtil;
+import org.phoenix.speed.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

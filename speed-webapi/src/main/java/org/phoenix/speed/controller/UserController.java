@@ -1,20 +1,18 @@
-package org.phoenix.speed.shiro.controller;
+package org.phoenix.speed.controller;
 
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.phoenix.speed.controller.RestApi;
-import org.phoenix.speed.controller.RestResult;
+import org.phoenix.speed.exception.RestApi;
+import org.phoenix.speed.exception.RestResult;
 import org.phoenix.speed.shiro.pojo.po.SysUser;
 import org.phoenix.speed.shiro.pojo.po.SysUserRole;
 import org.phoenix.speed.shiro.pojo.vo.SysUserVO;
 import org.phoenix.speed.shiro.service.SysUserRoleService;
 import org.phoenix.speed.shiro.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -37,7 +35,8 @@ public class UserController {
     public void login(){
         String userName = "admin";
         String password = "123456";
-
+        // 通过用户名到数据库查询用户信息
+        //SysUserVO userVO = sysUserService.selectByUserName(userName);
         UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
         SecurityUtils.getSubject().login(token);
     }

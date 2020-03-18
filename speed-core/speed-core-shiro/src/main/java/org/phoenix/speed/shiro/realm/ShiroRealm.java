@@ -14,7 +14,7 @@ import org.phoenix.speed.shiro.service.SysMenuService;
 import org.phoenix.speed.shiro.service.SysRoleService;
 import org.phoenix.speed.shiro.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 /**
  * 自定义Realm
  */
+@Component
 public class ShiroRealm extends AuthorizingRealm {
 
 
