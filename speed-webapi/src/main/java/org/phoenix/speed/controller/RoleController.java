@@ -2,8 +2,8 @@ package org.phoenix.speed.controller;
 
 import org.phoenix.speed.exception.RestApi;
 import org.phoenix.speed.exception.RestResult;
-import org.phoenix.speed.shiro.pojo.po.SysRole;
-import org.phoenix.speed.shiro.service.SysRoleService;
+import org.phoenix.speed.domain.pojo.po.SysRole;
+import org.phoenix.speed.domain.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

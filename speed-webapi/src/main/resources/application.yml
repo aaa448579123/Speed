@@ -10,3 +10,5 @@ spring:
         add-mappings: false
 server:
     port: 9981
+mybatis:
+    mapper-locations: classpath*:mapper/**/*.xml

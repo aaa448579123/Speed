@@ -7,11 +7,11 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.phoenix.speed.exception.RestApi;
 import org.phoenix.speed.exception.RestResult;
-import org.phoenix.speed.shiro.pojo.po.SysUser;
-import org.phoenix.speed.shiro.pojo.po.SysUserRole;
-import org.phoenix.speed.shiro.pojo.vo.SysUserVO;
-import org.phoenix.speed.shiro.service.SysUserRoleService;
-import org.phoenix.speed.shiro.service.SysUserService;
+import org.phoenix.speed.domain.pojo.po.SysUser;
+import org.phoenix.speed.domain.pojo.po.SysUserRole;
+import org.phoenix.speed.domain.pojo.vo.SysUserVO;
+import org.phoenix.speed.domain.service.SysUserRoleService;
+import org.phoenix.speed.domain.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
