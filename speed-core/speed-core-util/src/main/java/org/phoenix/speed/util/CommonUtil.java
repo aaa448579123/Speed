@@ -5,10 +5,10 @@ import cn.hutool.core.util.IdUtil;
 
 public class CommonUtil {
     /**
-     * 生成uuid
+     * 生成
      * @return
      */
-    public static String uuid(){
+    public static String createId(){
         Snowflake snowflake = IdUtil.createSnowflake(2,1);
         return snowflake.nextIdStr();
     }

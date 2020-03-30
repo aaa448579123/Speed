@@ -23,7 +23,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public int addUser(SysUser sysUser) {
-        sysUser.setUserId(CommonUtil.uuid());
+        sysUser.setUserId(CommonUtil.createId());
         sysUser.setCreateTime(new Date());
         return sysUserMapper.insertSelective(sysUser);
     }

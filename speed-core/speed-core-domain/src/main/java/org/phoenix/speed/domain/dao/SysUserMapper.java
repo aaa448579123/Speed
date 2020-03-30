@@ -1,10 +1,11 @@
 package org.phoenix.speed.domain.dao;
 
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.phoenix.speed.domain.pojo.po.SysUser;
 import org.phoenix.speed.domain.pojo.vo.SysUserVO;
 
-public interface SysUserMapper {
+public interface SysUserMapper extends BaseMapper<SysUser> {
     /**
      * 根据id查询数据
      * @param userId 有用户id
@@ -53,4 +54,6 @@ public interface SysUserMapper {
      * @return
      */
     int updateByPrimaryKey(SysUser record);
+
+
 }

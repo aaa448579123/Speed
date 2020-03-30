@@ -1,12 +1,11 @@
-package org.phoenix.speed.domain.pojo.po;
+package org.phoenix.speed.domain.interceptor;
 
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.util.Date;
 
-public class SysUser{
+public class BaseUser {
     /**
      * 用户id
      */
@@ -16,21 +15,25 @@ public class SysUser{
     /**
      * 用户名
      */
+    @TableField(exist = false)
     private String userName;
 
     /**
      * 密码
      */
+    @TableField(exist = false)
     private String password;
 
     /**
      * 创建时间
      */
+    @TableField(exist = false)
     private Date createTime;
 
     /**
      * 更新时间
      */
+    @TableField(exist = false)
     private Date updateTime;
 
 
@@ -74,14 +77,4 @@ public class SysUser{
         this.updateTime = updateTime;
     }
 
-    @Override
-    public String toString() {
-        return "SysUser{" +
-                "userId='" + userId + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
 }

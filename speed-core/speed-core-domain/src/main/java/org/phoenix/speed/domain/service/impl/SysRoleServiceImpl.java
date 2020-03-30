@@ -35,7 +35,7 @@ public class SysRoleServiceImpl implements SysRoleService {
      */
     @Override
     public int addRole(SysRole sysRole) {
-        sysRole.setRoleId(CommonUtil.uuid());
+        sysRole.setRoleId(CommonUtil.createId());
         sysRole.setCreateTime(new Date());
         return sysRoleMapper.insertSelective(sysRole);
     }

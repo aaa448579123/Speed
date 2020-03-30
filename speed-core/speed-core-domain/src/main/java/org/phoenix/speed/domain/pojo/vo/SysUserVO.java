@@ -16,11 +16,6 @@ public class SysUserVO extends SysUser{
      */
     private String roleName;
 
-    public SysUserVO(String userId, String userName, String password, Date createTime, Date updateTime, String roleId, String roleName) {
-        super(userId, userName, password, createTime, updateTime);
-        this.roleId = roleId;
-        this.roleName = roleName;
-    }
 
     public String getRoleId() {
         return roleId;
