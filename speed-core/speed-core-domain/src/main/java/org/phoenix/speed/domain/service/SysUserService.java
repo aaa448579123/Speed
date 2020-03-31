@@ -16,5 +16,5 @@ public interface SysUserService {
      * @param sysUser 用户对象
      * @return
      */
-    int addUser(SysUser sysUser);
+    String addUser(SysUser sysUser);
 }

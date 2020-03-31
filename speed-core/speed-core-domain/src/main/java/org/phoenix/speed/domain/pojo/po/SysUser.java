@@ -2,7 +2,6 @@ package org.phoenix.speed.domain.pojo.po;
 
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.util.Date;
 

@@ -49,7 +49,7 @@ public class UserController {
     @PostMapping
     @RequiresPermissions("user:add")
     public RestResult addUser(@RequestBody SysUser user){
-        int su = sysUserService.addUser(user);
+        sysUserService.addUser(user);
         return RestResult.success();
     }
 

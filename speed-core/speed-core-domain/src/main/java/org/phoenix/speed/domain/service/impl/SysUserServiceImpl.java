@@ -22,10 +22,12 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public int addUser(SysUser sysUser) {
-        sysUser.setUserId(CommonUtil.createId());
+    public String addUser(SysUser sysUser) {
+        String userId = CommonUtil.createId();
+        sysUser.setUserId(userId);
         sysUser.setCreateTime(new Date());
-        return sysUserMapper.insertSelective(sysUser);
+        sysUserMapper.insertSelective(sysUser);
+        return userId;
     }
 
 }
