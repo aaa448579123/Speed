@@ -8,6 +8,7 @@
         <module>speed-core-shiro</module>
         <module>speed-core-domain</module>
         <module>speed-core-util</module>
+        <module>speed-core-redis</module>
     </modules>
     <parent>
         <groupId>org.phoenix</groupId>
