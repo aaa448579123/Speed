@@ -1,5 +1,6 @@
 package org.phoenix.speed.redis;
 
+import org.phoenix.speed.redis.interceptor.AccessLimitInterceptor;
 import org.phoenix.speed.redis.interceptor.ApiIdempotentInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,7 +37,8 @@ public class SpringbootRedisLettuceApplication extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         // 接口幂等性拦截器
         registry.addInterceptor(apiIdempotentInterceptor());
-
+        // 接口防刷限流拦截器
+        registry.addInterceptor(accessLimitInterceptor());
         super.addInterceptors(registry);
     }
 
@@ -45,5 +47,8 @@ public class SpringbootRedisLettuceApplication extends WebMvcConfigurerAdapter {
         return new ApiIdempotentInterceptor();
     }
 
-
+    @Bean
+    public AccessLimitInterceptor accessLimitInterceptor(){
+        return new AccessLimitInterceptor();
+    }
 }
